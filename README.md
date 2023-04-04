@@ -12,7 +12,7 @@ Username and Password may ask because this is a private repo
   git clone https://github.com/matheesha-pathirana/WebSite_Blocker.git
 
   username - matheesha-pathiran
-  password - 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
+  password - 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
 ```
 ## Usage
 
@@ -24,6 +24,6 @@ Download [Python](https://www.python.org/downloads)
 
 ## Uninstallation
 
-*Contact Matheesha Pathirana for uninstalaltion
+*Contact Matheesha Pathirana for uninstallaltion
 
 ### Thank You...
