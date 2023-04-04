@@ -1,0 +1,8 @@
+strings
+GitPython
+gitdb
+string-color
+pyftpdlib
+discordwebhook
+discord-webhook
+pyuac
