@@ -28,7 +28,7 @@ print("An active internet connection is required for this program to work proper
 print("This program will help you block adult websites on your computer.")
 print("No personal information will be collected.")
 print("This program is not affiliated with any company.")
-print("This program is not responsible for any damage caused to your computer.")
+print("This program is not responsible for any damage caused to your computer. (Just kidding)")
 print("No warranty is provided.")
 print("This program is provided as is.")
 print("No refunds are provided.")
