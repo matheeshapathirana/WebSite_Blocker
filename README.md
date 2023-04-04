@@ -10,9 +10,6 @@ Username and Password may ask because this is a private repo
 
 ```cmd
   git clone https://github.com/matheesha-pathirana/WebSite_Blocker.git
-
-  username - matheesha-pathiran
-  password - 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
 ```
 ## Usage
 
