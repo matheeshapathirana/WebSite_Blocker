@@ -1,4 +1,3 @@
-strings
 GitPython
 gitdb
 string-color
