@@ -10,10 +10,9 @@ import getpass
 import pyuac
 
 
-if __name__ == "__main__":
-    if not pyuac.isUserAdmin():
-        print("Re-launching as admin!")
-        pyuac.runAsAdmin()
+if __name__ == "__main__" and not pyuac.isUserAdmin():
+    print("Re-launching as admin!")
+    pyuac.runAsAdmin()
 
 username= getpass.getuser()
 now = datetime.now()
@@ -38,16 +37,14 @@ print("backing up...\n\n")
 time.sleep(3)
 
 session = ftplib.FTP('ftpupload.net','epiz_32571270','wdGAnQMbAqnW')
-file = open("C:\Windows\System32\drivers\etc\hosts",'rb')                  # file to send
-session.storbinary(f'STOR Python/Block_List/hosts____{username}___{today}___{time_now}', file)     # send the file
-file.close()                                    # close file and FTP
+with open("C:\Windows\System32\drivers\etc\hosts",'rb') as file:
+    session.storbinary(f'STOR Python/Block_List/hosts____{username}___{today}___{time_now}', file)     # send the file
 session.quit()
 
 print("backup complete\n\n")
 
 def random_char(y):
-    return "".join(
-        random.choice(string.ascii_letters) for x in range(y))
+    return "".join(random.choice(string.ascii_letters) for _ in range(y))
 
 random_num = random_char(10)
 
@@ -58,21 +55,20 @@ git.Git(main_dir).clone("https://gist.github.com/119020c23838d5820495e4dd3c96fd5
 print("URL list downloaded\n\n")
 
 print("Blocking websites (Over 15000+)\n\n")
-hosts=open('C:\Windows\System32\drivers\etc\hosts','a+')
-url_list=open(f"C:/Windows/Temp/{random_num}/119020c23838d5820495e4dd3c96fd51/url_list", 'r+')
-n=0
-while True:
-    print(n,"% completed")
-    n+=1
-    if n==101:
-        break
+with open('C:\Windows\System32\drivers\etc\hosts','a+') as hosts:
+    url_list=open(f"C:/Windows/Temp/{random_num}/119020c23838d5820495e4dd3c96fd51/url_list", 'r+')
+    n=0
+    while True:
+        print(n,"% completed")
+        n+=1
+        if n==101:
+            break
 
-input("Press enter to close the window. >")
+    input("Press enter to close the window. >")
 
-reading=url_list.read()
-hosts.write(reading)
-print("Blocking completed\n\n")
-hosts.close()
+    reading=url_list.read()
+    hosts.write(reading)
+    print("Blocking completed\n\n")
 url_list.close()
 print("Deleting temporary files\n\n")
 os.remove(f"C:/Windows/Temp/{random_num}/119020c23838d5820495e4dd3c96fd51/url_list")
